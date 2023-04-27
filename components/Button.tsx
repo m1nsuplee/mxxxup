@@ -14,7 +14,12 @@ const Button: React.FC<ButtonProps> = ({
   ...rest
 }) => {
   return (
-    <button type={type} className={`${className}`} {...rest}>
+    <button
+      type={type}
+      className={`${className}`}
+      disabled={isLoading}
+      {...rest}
+    >
       {children}
     </button>
   );
