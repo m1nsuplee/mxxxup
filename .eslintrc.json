@@ -16,7 +16,7 @@
     "sourceType": "module"
   },
   "rules": {
-    "no-console": "off",
+    "no-console": 2,
     "no-debugger": "warn",
     "prettier/prettier": [
       "error",
@@ -25,10 +25,10 @@
         "semi": true,
         "useTaps": true,
         "tabWidth": 2,
-        "trailingComma": "all",
+        "trailingComma": "es5",
         "printWidth": 80,
         "bracketSpacing": true,
-        "arrowParens": "avoid"
+        "arrowParens": "always"
       }
     ]
   }
