@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ko">
-      <body>
+      <body className="min-h-screen">
         {children}
         <div id="modal" />
       </body>
