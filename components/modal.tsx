@@ -31,7 +31,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
   return createPortal(
     <div
       className={`
-        z-50 absolute top-0 left-0 overflow-hidden 
+        z-50 fixed top-0 left-0 overflow-hidden 
         w-screen h-screen justify-center items-center
         bg-black bg-opacity-40
         ${isOpen ? 'flex' : 'hidden'}
