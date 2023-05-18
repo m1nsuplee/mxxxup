@@ -7,7 +7,11 @@ export async function fetchCountries() {
 }
 
 export default async function Home() {
-  const countries = (await fetchCountries()) || [];
+  const countries = await fetchCountries();
+
+  if (!countries) {
+    return <p>no country data.</p>;
+  }
 
   return (
     <main>
