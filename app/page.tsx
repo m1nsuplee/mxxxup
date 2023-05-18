@@ -1,7 +1,7 @@
-import { supabase } from '@/lib/supabaseClient';
+import { db } from '@/lib/db';
 
 export async function fetchCountries() {
-  const { data: countries } = await supabase.from('countries').select();
+  const { data: countries } = await db.from('countries').select();
 
   return countries;
 }
