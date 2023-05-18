@@ -1,3 +1,3 @@
-import useAutosave from './useAutosave';
+import useAutosave from './use-autosave';
 
 export { useAutosave };
