@@ -1,3 +1,2 @@
-import useAutosave from './use-autosave';
-
-export { useAutosave };
+export * from './use-autosave';
+export * from './use-lock-body';
