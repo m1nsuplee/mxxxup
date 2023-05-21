@@ -1,5 +1,7 @@
 'use client';
 
+import { useLockBody } from '@/hooks';
+import { cls } from '@/lib/utils';
 import { MouseEvent, ReactNode, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -22,6 +24,8 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     setModalHTMLElement(document.getElementById('modal'));
   }, []);
 
+  useLockBody(isOpen);
+
   const handleModalClose = () => onClose && onClose();
 
   const stopPropagteModalChildEvent = (e: MouseEvent) => {
@@ -30,12 +34,12 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
   return createPortal(
     <div
-      className={`
-        z-50 fixed top-0 left-0 overflow-hidden 
-        w-screen h-screen justify-center items-center
-        bg-black bg-opacity-40
-        ${isOpen ? 'flex' : 'hidden'}
-    `}
+      className={cls(
+        'z-50 fixed top-0 left-0 overflow-hidden',
+        'w-screen h-screen justify-center items-center',
+        'bg-black bg-opacity-40',
+        `${isOpen ? 'flex' : 'hidden'}`
+      )}
       onClick={handleModalClose}
     >
       <div onClick={stopPropagteModalChildEvent}>{children}</div>
