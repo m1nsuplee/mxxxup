@@ -14,7 +14,7 @@ export default function ClientLayout({ children }: ClientLayoutProps) {
   return (
     <RecoilRoot>
       <QueryClientProvider client={queryClient}>
-        {children}
+        <div className="max-w-xl w-full">{children}</div>
         <ReactQueryDevtools />
       </QueryClientProvider>
     </RecoilRoot>

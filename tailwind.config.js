@@ -14,6 +14,9 @@ module.exports = {
         gray: '#7A7A7A',
         disabled: '#EBEBE4',
       },
+      backgroundColor: {
+        primary: '#1F1F1F',
+      },
     },
   },
   plugins: [],
