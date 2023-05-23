@@ -8,12 +8,19 @@ type ClientLayoutProps = {
   children: React.ReactNode;
 };
 
-const queryClient = new QueryClient();
+const queryCache = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      retry: false,
+    },
+  },
+});
 
 export default function ClientLayout({ children }: ClientLayoutProps) {
   return (
     <RecoilRoot>
-      <QueryClientProvider client={queryClient}>
+      <QueryClientProvider client={queryCache}>
         <div className="max-w-xl w-full">{children}</div>
         <ReactQueryDevtools />
       </QueryClientProvider>
