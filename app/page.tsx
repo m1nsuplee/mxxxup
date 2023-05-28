@@ -1,13 +1,7 @@
 import { db } from '@/lib/db';
 
-export async function fetchCountries() {
+export default async function HomePage() {
   const { data: countries } = await db.from('countries').select();
-
-  return countries;
-}
-
-export default async function Home() {
-  const countries = await fetchCountries();
 
   if (!countries) {
     return <p>no country data.</p>;
