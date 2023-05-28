@@ -16,15 +16,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     null
   );
 
-  if (!modalHTMLElement) {
-    return null;
-  }
-
   useEffect(() => {
     setModalHTMLElement(document.getElementById('modal'));
   }, []);
 
   useLockBody(isOpen);
+
+  if (!modalHTMLElement) {
+    return null;
+  }
 
   const handleModalClose = () => onClose && onClose();
 
