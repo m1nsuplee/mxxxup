@@ -2,7 +2,7 @@ import { siteConfig } from '@/config';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import ClientLayout from './client-layout';
-import { cls } from '@/lib/utils';
+import { cn } from '@/lib/utils';
 
 type RootLayoutProps = {
   children: React.ReactNode;
@@ -17,7 +17,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="ko">
       <body
-        className={cls(
+        className={cn(
           'min-h-screen bg-primary text-white',
           'flex justify-center items-start'
         )}
