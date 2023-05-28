@@ -27,8 +27,7 @@
         "trailingComma": "es5",
         "printWidth": 80,
         "bracketSpacing": true,
-        "arrowParens": "always",
-        "useTabs": true
+        "arrowParens": "always"
       }
     ]
   }
