@@ -11,7 +11,7 @@ export default async function HomePage() {
 
   const currentUser = await getCurrentUser();
 
-  if (!Boolean(currentUser)) {
+  if (!currentUser) {
     redirect(PATH.login);
   }
 
