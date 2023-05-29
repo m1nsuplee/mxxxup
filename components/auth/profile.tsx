@@ -1,9 +1,9 @@
 'use client';
 
 import Image from 'next/image';
-import Button from '../button';
+import { Button } from '@/components/common';
 import { signOut } from 'next-auth/react';
-import { PATH } from '@/lib/constants';
+import { PATH } from '@/lib';
 
 type ProfileProps = {
   user: User;
