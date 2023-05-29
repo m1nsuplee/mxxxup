@@ -1,5 +1,4 @@
-import { db, getCurrentUser } from '@/lib';
-import { PATH } from '@/lib/constants';
+import { db, getCurrentUser, PATH } from '@/lib';
 import { redirect } from 'next/navigation';
 
 export default async function HomePage() {

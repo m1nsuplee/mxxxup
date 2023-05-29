@@ -2,7 +2,7 @@ import { siteConfig } from '@/config';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import ClientLayout from './client-layout';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib';
 
 type RootLayoutProps = {
   children: React.ReactNode;
