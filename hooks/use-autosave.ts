@@ -9,7 +9,7 @@ import { debounce } from 'lodash';
 
 const DEBOUNCE_SAVE_DELAY_MS = 1000;
 
-const useAutosave = <T>(
+export const useAutosave = <T>(
   key: string,
   dataToSave: T
 ): [T, Dispatch<SetStateAction<T>>] => {
@@ -35,5 +35,3 @@ const useAutosave = <T>(
 
   return [data, setData];
 };
-
-export default useAutosave;

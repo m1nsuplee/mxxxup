@@ -23,7 +23,6 @@
       {
         "singleQuote": true,
         "semi": true,
-        "useTaps": true,
         "tabWidth": 2,
         "trailingComma": "es5",
         "printWidth": 80,
