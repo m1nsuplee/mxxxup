@@ -1,3 +1,4 @@
+import { cn } from '@/lib';
 import { ButtonHTMLAttributes } from 'react';
 
 type ButtonProps = {
@@ -16,7 +17,11 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type={type}
-      className={`${className}`}
+      className={cn(
+        className,
+        'w-full h-full rounded',
+        'border border-border-gray'
+      )}
       disabled={isLoading}
       {...rest}
     >
