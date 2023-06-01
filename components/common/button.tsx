@@ -1,4 +1,4 @@
-import { cn } from '@/lib';
+import clsx from 'clsx';
 import { ButtonHTMLAttributes } from 'react';
 
 type ButtonProps = {
@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({
   return (
     <button
       type={type}
-      className={cn(
+      className={clsx(
         className,
         'w-full h-full rounded',
         'border border-border-gray'

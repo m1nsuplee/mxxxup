@@ -1,17 +1,17 @@
 import { KakaoLoginButton } from '@/components/auth';
-import { cn } from '@/lib';
+import clsx from 'clsx';
 
 export default async function LoginPage() {
   return (
-    <main className={cn('min-h-screen', 'flex justify-center items-center')}>
+    <main className={clsx('min-h-screen', 'flex justify-center items-center')}>
       <div
-        className={cn(
+        className={clsx(
           'w-80 border border-gray/20',
           'rounded-md flex flex-col justify-between items-center',
           'py-4'
         )}
       >
-        <h1 className={cn('text-xl text-white/90 font-semibold')}>
+        <h1 className={clsx('text-xl text-white/90 font-semibold')}>
           {'SKRRT 스껅~!🔥'}
         </h1>
         <KakaoLoginButton />
