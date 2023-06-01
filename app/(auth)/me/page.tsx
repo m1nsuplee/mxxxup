@@ -1,7 +1,6 @@
-import { getCurrentUser } from '@/lib';
-import { PATH } from '@/lib/constants';
+import { getCurrentUser, PATH } from '@/lib';
 import { Profile } from '@/components/auth';
-import Button from '@/components/button';
+import { Button } from '@/components/common';
 import Link from 'next/link';
 
 export default async function MyPage() {

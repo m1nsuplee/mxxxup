@@ -2,7 +2,7 @@
 
 import { signIn } from 'next-auth/react';
 import KakaoLoginSymbol from '@/assets/kakao-login.svg';
-import { PATH } from '@/lib/constants';
+import { PATH } from '@/lib';
 
 const KakaoLoginButton: React.FC = () => {
   const kakaoLogin = () => {

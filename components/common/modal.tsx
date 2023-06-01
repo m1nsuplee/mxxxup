@@ -1,7 +1,7 @@
 'use client';
 
 import { useLockBody } from '@/hooks';
-import { cn } from '@/lib/utils';
+import { cn } from '@/lib';
 import { MouseEvent, ReactNode, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
