@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { Button } from '@/components/common';
 import { signOut } from 'next-auth/react';
 import { Path } from '@/lib';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { lookUpWords } from '@/service/korean-open-dictionary';
 
 type ProfileProps = {
@@ -12,6 +12,8 @@ type ProfileProps = {
 };
 
 const Profile: React.FC<ProfileProps> = ({ user }) => {
+  const [data, setData] = useState<any>();
+
   const logout = () => {
     signOut({
       callbackUrl: Path.login,
@@ -22,7 +24,7 @@ const Profile: React.FC<ProfileProps> = ({ user }) => {
     (async () => {
       const data = await lookUpWords();
 
-      console.log(data);
+      setData(data);
     })();
   }, []);
 
@@ -33,7 +35,10 @@ const Profile: React.FC<ProfileProps> = ({ user }) => {
           <h1 className="text-lg font-bold">{`${user.name}님의 프로필`}</h1>
           <h3 className="text-gray text-sm">{user.email}</h3>
         </div>
-        <div className="w-20 h-20">
+        <div
+          className="w-20 h-20"
+          onClick={() => alert(data)}
+        >
           <Image
             src={user.image || ''}
             alt={`${user.name}님의 프로필 사진`}
