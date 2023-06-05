@@ -12,7 +12,7 @@ export default async function LoginPage() {
         )}
       >
         <h1 className={clsx('text-xl text-white/90 font-semibold')}>
-          {'SKRRT 스껅~!🔥'}
+          {'🔥SKRRT🔥'}
         </h1>
         <KakaoLoginButton />
       </div>
