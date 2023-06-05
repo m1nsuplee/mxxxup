@@ -1,4 +1,4 @@
 export const siteConfig: SiteConfig = {
-  title: 'SKRRT~!',
+  title: 'SKRRT',
   description: 'I JUST DO IT LIKE NIKE.',
 };

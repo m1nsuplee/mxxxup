@@ -1,7 +1,7 @@
 'use client';
 
 import { useLockBody } from '@/hooks';
-import { cn } from '@/lib';
+import clsx from 'clsx';
 import { MouseEvent, ReactNode, useEffect, useState } from 'react';
 import { createPortal } from 'react-dom';
 
@@ -34,7 +34,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
   return createPortal(
     <div
-      className={cn(
+      className={clsx(
         'z-50 fixed top-0 left-0 overflow-hidden',
         'w-screen h-screen justify-center items-center',
         'bg-black bg-opacity-40',

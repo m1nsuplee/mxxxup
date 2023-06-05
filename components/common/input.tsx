@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import { HTMLInputTypeAttribute } from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
 
@@ -25,7 +26,7 @@ const Input: React.FC<InputProps> = (props) => {
 
   return (
     <input
-      className={`${className}`}
+      className={clsx(className)}
       accept={accept}
       type={type}
       placeholder={typeof placeholder === 'string' ? placeholder : undefined}
