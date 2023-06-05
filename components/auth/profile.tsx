@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { Button } from '@/components/common';
 import { signOut } from 'next-auth/react';
-import { PATH } from '@/lib';
+import { Path } from '@/lib';
 
 type ProfileProps = {
   user: User;
@@ -12,7 +12,7 @@ type ProfileProps = {
 const Profile: React.FC<ProfileProps> = ({ user }) => {
   const logout = () => {
     signOut({
-      callbackUrl: PATH.login,
+      callbackUrl: Path.login,
     });
   };
 

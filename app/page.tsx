@@ -1,4 +1,4 @@
-import { db, getCurrentUser, PATH } from '@/lib';
+import { db, getCurrentUser, Path } from '@/lib';
 import { redirect } from 'next/navigation';
 
 export default async function HomePage() {
@@ -7,7 +7,7 @@ export default async function HomePage() {
   const currentUser = await getCurrentUser();
 
   if (!currentUser) {
-    redirect(PATH.login);
+    redirect(Path.login);
   }
 
   if (!countries) {
