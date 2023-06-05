@@ -4,6 +4,8 @@ import Image from 'next/image';
 import { Button } from '@/components/common';
 import { signOut } from 'next-auth/react';
 import { Path } from '@/lib';
+import { useEffect } from 'react';
+import { lookUpWords } from '@/service/korean-open-dictionary';
 
 type ProfileProps = {
   user: User;
@@ -15,6 +17,14 @@ const Profile: React.FC<ProfileProps> = ({ user }) => {
       callbackUrl: Path.login,
     });
   };
+
+  useEffect(() => {
+    (async () => {
+      const data = await lookUpWords();
+
+      console.log(data);
+    })();
+  }, []);
 
   return (
     <section className="px-10 py-4 w-full min-h-screen flex flex-col justify-between items-center">
