@@ -1,1 +1,1 @@
-export const koreanOpenDictionaryAPIHost = 'https://opendict.korean.go.kr';
+export const koreanStandardDictionaryAPIHost = 'https://stdict.korean.go.kr';
