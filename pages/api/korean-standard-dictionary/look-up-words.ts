@@ -1,6 +1,6 @@
 import { koreanStandardDictionaryAPIHost } from '@/lib';
-import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
+import axios from 'axios';
 
 process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
 
