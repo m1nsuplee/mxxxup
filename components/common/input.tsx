@@ -13,17 +13,15 @@ type InputProps = {
   maxLength?: number;
 } & RegisterOptions;
 
-const Input: React.FC<InputProps> = (props) => {
-  const {
-    name,
-    placeholder,
-    type = 'text',
-    className,
-    accept,
-    maxLength,
-    ...registerOptions
-  } = props;
-
+const Input: React.FC<InputProps> = ({
+  name,
+  placeholder,
+  type = 'text',
+  className,
+  accept,
+  maxLength,
+  ...registerOptions
+}) => {
   const { register } = useFormContext();
 
   return (
