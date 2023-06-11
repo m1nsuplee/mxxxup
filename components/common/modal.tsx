@@ -22,15 +22,15 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
 
   useLockBody(isOpen);
 
-  if (!modalHTMLElement) {
-    return null;
-  }
-
   const handleModalClose = () => onClose && onClose();
 
   const stopPropagteModalChildEvent = (e: MouseEvent) => {
     e.stopPropagation();
   };
+
+  if (!modalHTMLElement) {
+    return null;
+  }
 
   return createPortal(
     <div
