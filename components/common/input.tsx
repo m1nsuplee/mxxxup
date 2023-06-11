@@ -10,6 +10,7 @@ type InputProps = {
   className?: string;
   accept?: string;
   type?: HTMLInputTypeAttribute;
+  maxLength?: number;
 } & RegisterOptions;
 
 const Input: React.FC<InputProps> = (props) => {
@@ -19,6 +20,7 @@ const Input: React.FC<InputProps> = (props) => {
     type = 'text',
     className,
     accept,
+    maxLength,
     ...registerOptions
   } = props;
 
@@ -26,10 +28,15 @@ const Input: React.FC<InputProps> = (props) => {
 
   return (
     <input
-      className={clsx(className)}
+      className={clsx(
+        className,
+        'focus:outline-none text-black w-full p-3',
+        'rounded-lg text-sm'
+      )}
       accept={accept}
       type={type}
       placeholder={typeof placeholder === 'string' ? placeholder : undefined}
+      maxLength={maxLength}
       {...register(name, registerOptions)}
     />
   );
