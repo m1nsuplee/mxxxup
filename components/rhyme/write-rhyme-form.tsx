@@ -39,6 +39,7 @@ const WriteRhymeForm: React.FC = () => {
           <Input
             name="content"
             placeholder="멋진 라임을 뱉어주세요 스껅"
+            minLength={4}
             maxLength={CharacterLimit.rhyme}
           />
           <span className="text-xs text-gray">{`${contentChareactersLength}/${CharacterLimit.rhyme}`}</span>
