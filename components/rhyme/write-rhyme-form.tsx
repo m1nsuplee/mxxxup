@@ -3,7 +3,7 @@
 import { FormProvider, useForm } from 'react-hook-form';
 import { CharacterLimit } from '@/lib';
 import clsx from 'clsx';
-import { Input } from '../common';
+import { Textarea } from '../common';
 
 type Rhyme = {
   content: string;
@@ -36,13 +36,14 @@ const WriteRhymeForm: React.FC = () => {
             'justify-start items-end gap-y-2'
           )}
         >
-          <Input
+          <Textarea
             name="content"
+            rows={1}
             placeholder="멋진 라임을 뱉어주세요 스껅"
             minLength={4}
             maxLength={CharacterLimit.rhyme}
           />
-          <span className="text-xs text-gray">{`${contentChareactersLength}/${CharacterLimit.rhyme}`}</span>
+          <small className="text-xs text-gray">{`${contentChareactersLength}/${CharacterLimit.rhyme}`}</small>
         </div>
       </form>
     </FormProvider>
