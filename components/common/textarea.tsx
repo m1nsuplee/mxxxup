@@ -14,7 +14,7 @@ const Textarea: React.FC<TextareaProps> = ({
   placeholder,
   className,
   maxLength,
-  rows = 4,
+  rows = 1,
   ...registerOptions
 }) => {
   const { register } = useFormContext();
