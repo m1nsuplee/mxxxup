@@ -20,7 +20,7 @@ const WriteRhymeForm: React.FC = () => {
   const contentChareactersLength = watch('content').length;
 
   const handleWriteRhymeFormSubmit = handleSubmit(async ({ content }) => {
-    await db.from('rhymes').insert([{ content, name }]);
+    await db.from('rhymes').insert([{ content }]);
   });
 
   return (
