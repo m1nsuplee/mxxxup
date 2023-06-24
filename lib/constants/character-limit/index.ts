@@ -1,3 +1,6 @@
 export const CharacterLimit = {
-  rhyme: 80,
+  rhyme: {
+    min: 4,
+    max: 80,
+  },
 };
