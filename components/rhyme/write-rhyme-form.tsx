@@ -9,15 +9,11 @@ type Rhyme = {
   content: string;
 };
 
-type WriteRhymeFormProps = {};
-
 const WriteRhymeForm: React.FC = () => {
   const methods = useForm<Rhyme>({
     mode: 'onChange',
     defaultValues: { content: '' },
   });
-
-  console.log(name);
 
   const { watch, handleSubmit } = methods;
 
@@ -49,7 +45,6 @@ const WriteRhymeForm: React.FC = () => {
           />
           <small className="text-xs text-gray">{`${contentChareactersLength}/${CharacterLimit.rhyme}`}</small>
         </div>
-        <button type="submit">등록</button>
       </form>
     </FormProvider>
   );
