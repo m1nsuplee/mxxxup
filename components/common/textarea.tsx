@@ -1,43 +1,43 @@
-'use client';
-
 import clsx from 'clsx';
-import { HTMLInputTypeAttribute } from 'react';
 import { RegisterOptions, useFormContext } from 'react-hook-form';
 
-type InputProps = {
+type TextareaProps = {
   name: string;
   placeholder?: string;
   className?: string;
-  accept?: string;
-  type?: HTMLInputTypeAttribute;
   maxLength?: number;
+  rows?: number;
 } & RegisterOptions;
 
-const Input: React.FC<InputProps> = ({
+const Textarea: React.FC<TextareaProps> = ({
   name,
   placeholder,
-  type = 'text',
   className,
-  accept,
   maxLength,
+  rows = 1,
   ...registerOptions
 }) => {
   const { register } = useFormContext();
 
+  const handleTextareaInput = (event: React.FormEvent<HTMLTextAreaElement>) => {
+    event.currentTarget.style.height = 'auto';
+    event.currentTarget.style.height = `${event.currentTarget.scrollHeight}px`;
+  };
+
   return (
-    <input
+    <textarea
       className={clsx(
         className,
         'focus:outline-none text-black w-full p-3',
         'rounded-lg text-sm'
       )}
-      accept={accept}
-      type={type}
-      placeholder={typeof placeholder === 'string' ? placeholder : undefined}
+      placeholder={placeholder}
       maxLength={maxLength}
+      rows={rows}
+      onInput={handleTextareaInput}
       {...register(name, registerOptions)}
     />
   );
 };
 
-export default Input;
+export default Textarea;
