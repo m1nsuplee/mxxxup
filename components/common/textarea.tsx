@@ -7,7 +7,6 @@ type TextareaProps = {
   className?: string;
   maxLength?: number;
   rows?: number;
-  onSubmit?: () => void;
 } & RegisterOptions;
 
 const Textarea: React.FC<TextareaProps> = ({
