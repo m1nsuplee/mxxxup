@@ -1,7 +1,7 @@
 'use client';
 
 import { FormProvider, useForm } from 'react-hook-form';
-import { CharacterLimit } from '@/lib';
+import { CharacterLimit, db } from '@/lib';
 import clsx from 'clsx';
 import { Textarea } from '../common';
 
@@ -9,18 +9,22 @@ type Rhyme = {
   content: string;
 };
 
+type WriteRhymeFormProps = {};
+
 const WriteRhymeForm: React.FC = () => {
   const methods = useForm<Rhyme>({
     mode: 'onChange',
     defaultValues: { content: '' },
   });
 
+  console.log(name);
+
   const { watch, handleSubmit } = methods;
 
   const contentChareactersLength = watch('content').length;
 
-  const handleWriteRhymeFormSubmit = handleSubmit((rhyme) => {
-    alert(rhyme.content);
+  const handleWriteRhymeFormSubmit = handleSubmit(async ({ content }) => {
+    await db.from('rhymes').insert([{ content, name }]);
   });
 
   return (
@@ -45,6 +49,7 @@ const WriteRhymeForm: React.FC = () => {
           />
           <small className="text-xs text-gray">{`${contentChareactersLength}/${CharacterLimit.rhyme}`}</small>
         </div>
+        <button type="submit">등록</button>
       </form>
     </FormProvider>
   );
