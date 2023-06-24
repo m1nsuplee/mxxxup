@@ -7,6 +7,7 @@ type TextareaProps = {
   className?: string;
   maxLength?: number;
   rows?: number;
+  onSubmit?: () => void;
 } & RegisterOptions;
 
 const Textarea: React.FC<TextareaProps> = ({
@@ -17,11 +18,20 @@ const Textarea: React.FC<TextareaProps> = ({
   rows = 1,
   ...registerOptions
 }) => {
-  const { register } = useFormContext();
+  const { register, reset } = useFormContext();
 
-  const handleTextareaInput = (event: React.FormEvent<HTMLTextAreaElement>) => {
-    event.currentTarget.style.height = 'auto';
-    event.currentTarget.style.height = `${event.currentTarget.scrollHeight}px`;
+  const handleTextareaKeyDown = (
+    event: React.KeyboardEvent<HTMLTextAreaElement>
+  ) => {
+    const isShiftEnter = event.shiftKey && event.key === 'Enter';
+
+    const isEnter = !event.shiftKey && event.key === 'Enter';
+
+    if (isShiftEnter) {
+      event.currentTarget.style.height = `${event.currentTarget.scrollHeight}px`;
+    } else if (isEnter) {
+      reset();
+    }
   };
 
   return (
@@ -29,12 +39,13 @@ const Textarea: React.FC<TextareaProps> = ({
       className={clsx(
         className,
         'focus:outline-none text-black w-full p-3',
-        'rounded-lg text-sm'
+        'rounded-lg text-sm resize-none max-h-72'
       )}
       placeholder={placeholder}
       maxLength={maxLength}
       rows={rows}
-      onInput={handleTextareaInput}
+      onKeyDown={handleTextareaKeyDown}
+      style={{ height: '44px' }}
       {...register(name, registerOptions)}
     />
   );
