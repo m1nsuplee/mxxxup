@@ -1,7 +1,6 @@
 import { siteConfig } from '@/config';
 import '@/styles/globals.css';
 import type { Metadata } from 'next';
-import ClientLayout from './client-layout';
 import localFont from 'next/font/local';
 import clsx from 'clsx';
 
@@ -28,8 +27,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           pretendardFont.className
         )}
       >
-        <ClientLayout>{children}</ClientLayout>
-        <div id="modal" />
+        {children}
       </body>
     </html>
   );
