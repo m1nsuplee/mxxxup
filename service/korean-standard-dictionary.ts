@@ -1,10 +1,15 @@
-import service from '.';
+import axios from 'axios';
 
 export const lookUpWords = async () => {
   const {
     data: { data },
-  } = await service.get<LookUpWordsResponse>(
-    '/api/korean-standard-dictionary/look-up-words'
+  } = await axios.get<LookUpWordsResponse>(
+    '/api/korean-standard-dictionary/look-up-words',
+    {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    }
   );
 
   const { channel } = data;
