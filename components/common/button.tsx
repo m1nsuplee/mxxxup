@@ -19,7 +19,7 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       className={clsx(
         className,
-        'w-full h-full rounded',
+        'w-full h-full rounded bg-primary',
         'border border-border-gray'
       )}
       disabled={isLoading}
