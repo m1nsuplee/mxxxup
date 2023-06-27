@@ -3,6 +3,7 @@ import '@/styles/globals.css';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import clsx from 'clsx';
+import AuthProvider from './auth-provider';
 
 type RootLayoutProps = {
   children: React.ReactNode;
@@ -27,7 +28,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           pretendardFont.className
         )}
       >
-        {children}
+        <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
   );
