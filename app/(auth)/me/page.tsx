@@ -8,7 +8,7 @@ export default async function MyPage() {
 
   if (!currentUser) {
     return (
-      <div className="w-full h-screen flex flex-col justify-center items-center gap-y-10">
+      <div className="max-w-3xl w-full h-screen flex flex-col justify-center items-center gap-y-10">
         <h1 className="text-xl">{'사용자 정보가 존재하지 않습니다.'}</h1>
         <Link
           href={Path.login}
@@ -21,7 +21,7 @@ export default async function MyPage() {
   }
 
   return (
-    <main className="w-full min-h-screen">
+    <main className="max-w-3xl w-full min-h-screen mx-auto">
       <Profile user={currentUser} />
     </main>
   );

@@ -6,7 +6,6 @@ const nextConfig = {
   },
   env: {
     KAKAO_REST_API_KEY: process.env.KAKAO_REST_API_KEY,
-    SUPABASE_ACCESS_TOKEN: process.env.SUPABASE_ACCESS_TOKEN,
     KAKAO_CLIENT_SECRET: process.env.KAKAO_CLIENT_SECRET,
     JWT_SECRET_KEY: process.env.JWT_SECRET_KEY,
   },
