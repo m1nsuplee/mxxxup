@@ -1,5 +1,6 @@
 'use client';
 
+import clsx from 'clsx';
 import Image from 'next/image';
 import { Button } from '@/components/common';
 import { signOut } from 'next-auth/react';
@@ -10,15 +11,20 @@ type ProfileProps = {
 };
 
 const Profile: React.FC<ProfileProps> = ({ user }) => {
-  const logout = () => {
+  const handleLogoutButtonClick = () => {
     signOut({
       callbackUrl: Path.login,
     });
   };
 
   return (
-    <section className="px-10 py-4 w-full min-h-screen flex flex-col justify-between items-center">
-      <div className="w-full flex justify-around">
+    <section
+      className={clsx(
+        'px-10 py-4 w-full',
+        'flex flex-col justify-between items-center'
+      )}
+    >
+      <div className="w-full flex justify-between items-start">
         <div>
           <h1 className="text-lg font-bold">{`${user.name}님의 프로필`}</h1>
           <h3 className="text-gray text-sm">{user.email}</h3>
@@ -33,13 +39,16 @@ const Profile: React.FC<ProfileProps> = ({ user }) => {
           />
         </div>
       </div>
-      <div className="w-60 h-14">
-        <Button
-          type="button"
-          onClick={logout}
-        >
-          {'로그아웃'}
-        </Button>
+      <div className="w-full">
+        <div className="w-fit h-fit">
+          <Button
+            type="button"
+            onClick={handleLogoutButtonClick}
+            className="text-xs"
+          >
+            {'로그아웃'}
+          </Button>
+        </div>
       </div>
     </section>
   );
