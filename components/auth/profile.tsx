@@ -35,7 +35,7 @@ const Profile: React.FC<ProfileProps> = ({ user }) => {
             alt={`${user.name}님의 프로필 사진`}
             width={500}
             height={500}
-            className="w-full h-full rounded-full border border-border-gray"
+            className="w-full h-full rounded-full border border-gray-500"
           />
         </div>
       </div>
@@ -43,6 +43,7 @@ const Profile: React.FC<ProfileProps> = ({ user }) => {
         <div className="w-fit h-fit">
           <Button
             type="button"
+            variant="grayscale"
             onClick={handleLogoutButtonClick}
             className="text-xs"
           >
