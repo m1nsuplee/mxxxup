@@ -7,7 +7,7 @@ import { Path } from '@/lib';
 const KakaoLoginButton: React.FC = () => {
   const kakaoLogin = () => {
     signIn('kakao', {
-      callbackUrl: Path.mypage,
+      callbackUrl: Path.auth.mypage,
     });
   };
 
