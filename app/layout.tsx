@@ -1,9 +1,11 @@
-import { siteConfig } from '@/config';
 import '@/styles/globals.css';
-import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import clsx from 'clsx';
 import AuthProvider from './auth-provider';
+import type { Metadata } from 'next';
+import { siteConfig } from '@/config';
+import { Header } from '@/components/common';
+import { getCurrentUser } from '@/lib';
 
 type RootLayoutProps = {
   children: React.ReactNode;
@@ -18,17 +20,22 @@ export const metadata: Metadata = {
   description: siteConfig.description,
 };
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({ children }: RootLayoutProps) {
+  const currentUser = await getCurrentUser();
+
   return (
     <html lang="ko">
       <body
         className={clsx(
-          'min-h-screen bg-primary text-white',
-          'flex justify-center items-start',
+          'min-h-screen bg-dark text-white',
+          'max-w-3xl mx-auto py-4',
           pretendardFont.className
         )}
       >
-        <AuthProvider>{children}</AuthProvider>
+        <AuthProvider>
+          <Header user={currentUser} />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );
