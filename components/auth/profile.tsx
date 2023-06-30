@@ -13,7 +13,7 @@ type ProfileProps = {
 const Profile: React.FC<ProfileProps> = ({ user }) => {
   const handleLogoutButtonClick = () => {
     signOut({
-      callbackUrl: Path.login,
+      callbackUrl: Path.auth.login,
     });
   };
 

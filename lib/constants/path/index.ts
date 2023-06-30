@@ -1,5 +1,8 @@
 export const Path = {
-  login: '/login',
-  kakaoAuth: '/auth/kakao',
-  mypage: '/me',
+  home: '/',
+  auth: {
+    login: '/login',
+    kakaoAuth: '/auth/kakao',
+    mypage: '/me',
+  },
 };
