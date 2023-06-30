@@ -1,4 +1,4 @@
-import { NextAuthOptions, getServerSession } from 'next-auth';
+import { NextAuthOptions } from 'next-auth';
 import KakaoProvider from 'next-auth/providers/kakao';
 
 const clientId = process.env.KAKAO_REST_API_KEY || '';
