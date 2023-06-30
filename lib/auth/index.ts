@@ -1,4 +1,4 @@
-import { NextAuthOptions, getServerSession } from 'next-auth';
+import { NextAuthOptions } from 'next-auth';
 import KakaoProvider from 'next-auth/providers/kakao';
 
 const clientId = process.env.KAKAO_REST_API_KEY || '';
@@ -24,10 +24,4 @@ export const authOptions: NextAuthOptions = {
       return session;
     },
   },
-};
-
-export const getCurrentUser = async () => {
-  const session = await getServerSession(authOptions);
-
-  return session?.user;
 };

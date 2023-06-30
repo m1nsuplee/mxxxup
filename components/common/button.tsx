@@ -1,10 +1,13 @@
 import clsx from 'clsx';
 import { ButtonHTMLAttributes } from 'react';
 
+type ButtonVariant = 'primary' | 'grayscale';
+
 type ButtonProps = {
   type: ButtonHTMLAttributes<HTMLButtonElement>['type'];
   className?: string;
   isLoading?: boolean;
+  variant: ButtonVariant;
 } & Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type'>;
 
 const Button: React.FC<ButtonProps> = ({
@@ -12,6 +15,7 @@ const Button: React.FC<ButtonProps> = ({
   className,
   isLoading,
   children,
+  variant,
   ...rest
 }) => {
   return (
@@ -19,8 +23,9 @@ const Button: React.FC<ButtonProps> = ({
       type={type}
       className={clsx(
         className,
-        'w-full h-full rounded bg-primary',
-        'border border-border-gray p-2'
+        'w-full h-full rounded',
+        'border border-gray-500 p-2',
+        variant === 'primary' ? 'bg-primary' : 'bg-dark'
       )}
       disabled={isLoading}
       {...rest}
