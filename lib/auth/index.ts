@@ -5,6 +5,8 @@ const clientId = process.env.KAKAO_REST_API_KEY || '';
 
 const clientSecret = process.env.KAKAO_CLIENT_SECRET || '';
 
+const secret = process.env.JWT_SECRET_KEY || '';
+
 export const authOptions: NextAuthOptions = {
   providers: [
     KakaoProvider({
@@ -12,7 +14,7 @@ export const authOptions: NextAuthOptions = {
       clientSecret,
     }),
   ],
-  secret: process.env.JWT_SECRET_KEY,
+  secret,
   callbacks: {
     session({ session, token }) {
       if (session.user) {
