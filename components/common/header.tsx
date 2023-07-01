@@ -65,7 +65,10 @@ export default function Header({ user }: HeaderProps) {
               <Button
                 type="button"
                 variant="primary"
-                className="text-sm text-gray-100 hover:text-white"
+                className={clsx(
+                  'text-sm text-gray-100 hover:text-white',
+                  'rounded-[99px] border border-gray-700'
+                )}
               >
                 {'회원가입'}
               </Button>
