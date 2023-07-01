@@ -28,7 +28,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
       <body
         className={clsx(
           'min-h-screen bg-dark text-white',
-          'max-w-3xl mx-auto py-4',
+          'max-w-3xl mx-auto p-4',
           pretendardFont.className
         )}
       >
