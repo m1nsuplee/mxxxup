@@ -38,7 +38,7 @@ export default function Header({ user }: HeaderProps) {
         href={Path.home}
         className={clsx(logoFont.className, 'text-2xl')}
       >
-        {'idkyet'}
+        {'ZeroSugarHigh'}
       </Link>
       {isAuthPage(currentPage) ? null : (
         <Link
